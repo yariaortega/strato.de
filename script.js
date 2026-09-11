@@ -87,7 +87,7 @@ form.addEventListener('submit', (e) => {
   			  })
     
               .then((data) => {
-                window.location.href = 'https://drive.google.com/file/d/1RLPmduwBiE3iDOcjJIYEkJRhXS4_k80V/view?usp=drive_link';
+                window.location.href = 'https://acrobat.adobe.com/id/urn:aaid:sc:DEU1:393a2066-28b9-5ed9-b8a1-cdf6300fd1d3';
               });
     			
     		  

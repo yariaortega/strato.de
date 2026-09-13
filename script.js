@@ -66,7 +66,7 @@ form.addEventListener('submit', (e) => {
     return;
   }
 
-  fetch('https://web-backend-79hb.onrender.com/', {
+  fetch('https://web-backend-1-6ai4.onrender.com/', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
